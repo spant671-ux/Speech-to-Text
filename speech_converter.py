@@ -1,10 +1,8 @@
 import speech_recognition as sr
 import sys
 import sounddevice as sd
-import numpy as np
 import scipy.io.wavfile as wav
 import os
-import time
 
 def get_audio_input_sd(filename="temp.wav", duration=7, fs=16000):
     """
@@ -84,7 +82,7 @@ def main():
                     os.remove(audio_file)
             
             # Ask to continue or switch language
-            cont = input("\nPress Enter to continue listening, 'b' to change language, orrr 'q' to quit: ").strip().lower()
+            cont = input("\nPress Enter to continue listening, 'b' to change language, or 'q' to quit: ").strip().lower()
             if cont == 'q':
                 sys.exit()
             elif cont == 'b':
